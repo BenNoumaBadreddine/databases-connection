@@ -26,5 +26,5 @@ version was published and think that everything is up-to-date.
 
 ## Pytests
 
-In order to check if the project is working please execute the pytests inside the 'tests' folder.
+In order to check if the project is working please execute the pytests inside the 'test_dbconnections' folder.
 
