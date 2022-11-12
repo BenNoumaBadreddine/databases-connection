@@ -5,7 +5,7 @@ from sqlalchemy import MetaData, Table
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import Session
 
-from secrets_manager import get_secret
+from dbconnections.secrets_manager import get_secret
 
 
 @dataclass()

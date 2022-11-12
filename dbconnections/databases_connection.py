@@ -9,7 +9,7 @@ from sqlalchemy import create_engine, MetaData, Table
 from sqlalchemy.engine import Engine
 from sqlalchemy.orm import sessionmaker, Session
 
-from databases_dataclasses import DbConfig, DbEngineConfig
+from dbconnections.databases_dataclasses import DbConfig, DbEngineConfig
 
 logger = logging.getLogger(__name__)
 
@@ -81,7 +81,7 @@ def get_db_connection(db_config: DbConfig, application_name: str = None) -> Data
     """
     global _DATABASES
     if _DATABASES.get(db_config.db_name) is None:
-        # the requested db is not available in the dict. Therefore we must create a new connection
+        # the requested db is not available in the dict. Therefore, we must create a new connection
         logger.debug(f'No database connection to reuse for {db_config.db_name}')
         _DATABASES[db_config.db_name] = DatabaseConnection(db_config, application_name)
     else:
